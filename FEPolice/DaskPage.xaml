@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FEPolice.DaskPage"
+             Title="DaskPage">
+    <StackLayout Padding="0">
+
+        <Grid Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Kimlik NO" />
+            <Label Grid.Column="1"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Kullanıcı adi" />
+            <Label Grid.Column="2"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Kullanıcı Soyadı" />
+            <Label Grid.Column="3"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Doğum Tarihi" />
+            <Label Grid.Column="4"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Açık Adres" />
+            <Label Grid.Column="5"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="İlçe" />
+            <Label Grid.Column="6"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="İl" />
+            <Label Grid.Column="7"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Sil" />
+
+        </Grid>
+        <ScrollView>
+            <CollectionView x:Name="collectionView" ItemsSource="{Binding}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid Margin="3" Padding="2" BackgroundColor="#141010">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#DCEFFF" FontSize="8" Text="{Binding Person.KimlikNo}"/>
+                            <Label Grid.Column="1"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Person.Adi}" />
+                            <Label Grid.Column="2"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#DCEFFF" FontSize="8" Text="{Binding Person.Soyadi}"/>
+                            <Label Grid.Column="3"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Person.DogumTarihi}" />
+                            <Label Grid.Column="4"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Adress}" />
+                            <Label Grid.Column="5"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Ilce}" />
+                            <Label Grid.Column="6"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Il}" />
+                            <Button Grid.Column="7" BorderWidth="5" BackgroundColor="AliceBlue" FontSize="8" TextColor="Red" BorderColor="Black" Text="Sil" Clicked="Sil_Clicked" CommandParameter="{Binding PolicyNumber}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Button  BorderWidth="3" Margin="3" WidthRequest="160"  BackgroundColor="Green" FontSize="10" TextColor="White" BorderColor="Black" Text="Dask Poliçesi Ekle" Clicked="Ekle_Clicked"/>
+    </StackLayout>
+</ContentPage>

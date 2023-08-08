@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FEPolice.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Margin="15">
+
+                    <Image  Margin="10"
+                            Source="password.png"
+                            HeightRequest="150"
+                            HorizontalOptions="Center" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <BoxView Grid.Column="1" Color="White" HeightRequest="30"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/Images/ada.jpg" HeightRequest="50" />
+                    </Grid>
+                    <Label Text="Kullanıcı Giriş Sayfası"
+                           HorizontalOptions="Center"
+                           Margin="15"
+                           FontAttributes="Bold"
+                           FontSize="Title"/>
+                    <Entry x:Name="Kullaniciadi"
+                           Margin="10" 
+                           Placeholder="Kullanıcı Adı" />
+
+                    <Entry x:Name="Kullanicisifre"
+                           IsPassword="True"
+                           Margin="10" 
+                           Placeholder="Şifre" />
+
+                    <Button Text="Giriş" 
+                            WidthRequest="100" 
+                            Clicked="OnCounterClicked"
+                            HorizontalOptions="Center" 
+                            SemanticProperties.Hint="Giriş Yap" />
+                </StackLayout>
+
+
+                <Entry x:Name="ErrorMessage" 
+                       Grid.Row="1"
+                       IsVisible="False"
+                       Text="{Binding ErrorMessage}" 
+                       Margin="10" 
+                       Background="Red"  
+                       HorizontalOptions="Center" />
+            </Grid>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

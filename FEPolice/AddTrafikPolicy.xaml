@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FEPolice.AddTrafikPolicy"
+             Title="Add Trafik Policy">
+    <StackLayout Padding="0">
+
+        <Label Text="Kullanıcı Adı" Margin="10,5,10,0"></Label>
+        <Entry x:Name="KullaniciAdi" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"  IsEnabled="False"></Entry>
+
+        <Label Text="Kullanıcı Soyadı" Margin="10,5,10,0"></Label>
+        <Entry x:Name="KullaniciSoyAdi" WidthRequest="150" Margin="10,0" HorizontalOptions="Start" IsEnabled="False"></Entry>
+
+        <Label Text="Plaka İl Kodu" Margin="10,5,10,0"></Label>
+        <Entry x:Name="PlakaIlKodu" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+
+        <Label Text="Plaka Kodu" Margin="10,5,10,0"></Label>
+        <Entry x:Name="PlakaKodu" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
+
+        <Label Text="TanzimTarihi" Margin="10,5,10,0"></Label>
+        <Entry x:Name="TanzimTarihi" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
+
+        <Label Text="VadeBaslangic" Margin="10,5,10,0"></Label>
+        <Entry x:Name="VadeBaslangic" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+
+        <Label Text="VadeBitis" Margin="10,5,10,0"></Label>
+        <Entry x:Name="VadeBitis" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+
+        <Label Text="Prim" Margin="10,5,10,0"></Label>
+        <Entry x:Name="Prim" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+
+
+
+        <Button  BorderWidth="3" Margin="3" WidthRequest="160"  BackgroundColor="Green" FontSize="10" TextColor="White" BorderColor="Black" Clicked="Add_Trafik_Policy" Text="Trafik Poliçesi Ekle" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FEPolice.Page1"
+             Title="Police" >
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <StackLayout>
+                <Label x:Name="User" Text="{Binding Name}" HorizontalOptions="Center" FontAttributes="Italic" FontSize="Medium"/>
+                <Grid>
+                    
+                    
+                    <!-- Arka plan resmi -->
+                    <!--<Image Source="/Images/password.png" Aspect="AspectFill" />-->
+
+                    <!-- Buton ve metni -->
+                    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Button Text="Poliçelerim"
+                    Clicked="Button_Clicked_1"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                TextColor="Black"
+                                TextTransform="Uppercase"
+                    BackgroundColor="AliceBlue"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 120"
+                                Margin="15" BorderWidth="1" BorderColor="#110F0F"/>
+                        <!-- Orta noktada ve boyutları 200x40 piksel olan buton. Arka planı şeffaf. -->
+
+                        <!-- Metni butonun üzerine yerleştirin, istediğiniz konuma ayarlayabilirsiniz. -->
+                    </AbsoluteLayout>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" Color="White" HeightRequest="20"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" HeightRequest="2"/>
+                </Grid>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Trafik"
+                            BackgroundColor="AliceBlue"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 100"
+                            FontSize="24"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            TextTransform="Uppercase"
+                            Margin="15"
+                            Grid.Column="0"
+                            Clicked="Buton_Trafik" BorderWidth="1" BorderColor="#050505"/>
+
+                    <Image Source="/Images/car.png"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 50"
+           Margin="0,0,0,0"
+           Grid.Column="1" />
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" HeightRequest="2"/>
+                </Grid>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Dask"
+            BackgroundColor="AliceBlue"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 100"
+            FontSize="24"
+            TextColor="Black"
+                                FontAttributes="Bold"
+                            
+            TextTransform="Uppercase"
+            Margin="15"
+            Grid.Column="1"
+             Clicked="Buton_Dask" BorderWidth="1" BorderColor="#080808"/>
+
+                    <Image Source="/Images/dask.png"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 50"
+           Margin="0,0,0,0"
+           Grid.Column="0" />
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" HeightRequest="2"/>
+                </Grid>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Kasko"
+            BackgroundColor="AliceBlue"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 100"
+            FontSize="24"
+            TextColor="Black"
+                                FontAttributes="Bold"
+                            
+            TextTransform="Uppercase"
+            Margin="15"
+            Grid.Column="0"
+                            Clicked="Buton_Kasko" BorderColor="#111111" BorderWidth="1"/>
+
+                    <Image Source="/Images/kasko.png"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 50"
+           Margin="0,0,0,0"
+           Grid.Column="1" />
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" HeightRequest="2"/>
+                </Grid>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Sağlik"
+            BackgroundColor="AliceBlue"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 100"
+            FontSize="24"
+            TextColor="Black"
+                                FontAttributes="Bold"
+            
+            TextTransform="Uppercase"
+            Margin="15"
+            Grid.Column="1"
+                            Clicked="Buton_Health" BorderWidth="1" BorderColor="#000000"/>
+
+                    <Image Source="/Images/saglik.png"
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, 400, 50"
+           Margin="0,0,0,0"
+           Grid.Column="0" />
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" HeightRequest="2"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="1" Color="White" HeightRequest="30"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/Images/ada.jpg"/>
+                </Grid>
+
+
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
