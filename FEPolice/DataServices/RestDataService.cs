@@ -1,28 +1,32 @@
 ﻿using FEPolice.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace FEPolice.DataServices
 {
     public class RestDataService : IRestDataService
     {
-        private readonly HttpClient _httpClient;
+        private HttpClient _httpClient;
         private readonly string _baseAddress;
         private readonly string _url;
         private readonly JsonSerializerOptions _jsonSerializeroptions;
-
+        Person user;
         public RestDataService()
         {
 
             _httpClient = CreateHttpClient();
 
-            _baseAddress =DeviceInfo.Platform == DevicePlatform.Android? "http://10.0.2.2:5047" :"https://localhost:7267" ;
+            _baseAddress = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5047" : "https://localhost:7267";
             _url = $"{_baseAddress}/api";
 
             _jsonSerializeroptions = new JsonSerializerOptions
@@ -53,7 +57,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonPolicys = JsonSerializer.Serialize<Policys>(police, _jsonSerializeroptions);
+                string jsonPolicys = System.Text.Json.JsonSerializer.Serialize<Policys>(police, _jsonSerializeroptions);
                 StringContent content = new StringContent(jsonPolicys, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage responseMessage = await _httpClient.PostAsync($"{_url}/Policys", content);
@@ -85,10 +89,10 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonUser = JsonSerializer.Serialize<Model.Person>(user, _jsonSerializeroptions);
-                StringContent content=new StringContent(jsonUser,Encoding.UTF8,"application/json");
+                string jsonUser = System.Text.Json.JsonSerializer.Serialize<Model.Person>(user, _jsonSerializeroptions);
+                StringContent content = new StringContent(jsonUser, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage responseMessage = await _httpClient.PostAsync($"{_url}/Person",content);
+                HttpResponseMessage responseMessage = await _httpClient.PostAsync($"{_url}/Person", content);
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     Debug.WriteLine("Succesfully created User");
@@ -142,7 +146,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                HttpResponseMessage message=await _httpClient.DeleteAsync($"{_url}/Person/{id}");
+                HttpResponseMessage message = await _httpClient.DeleteAsync($"{_url}/Person/{id}");
                 if (message.IsSuccessStatusCode)
                 {
                     Debug.WriteLine("Succesfully created User");
@@ -175,7 +179,7 @@ namespace FEPolice.DataServices
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
-                    policysList = JsonSerializer.Deserialize<List<Policys>>(content, _jsonSerializeroptions);
+                    policysList = System.Text.Json.JsonSerializer.Deserialize<List<Policys>>(content, _jsonSerializeroptions);
                 }
                 else
                 {
@@ -206,8 +210,8 @@ namespace FEPolice.DataServices
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
 
-                    users = JsonSerializer.Deserialize<List<Model.Person>>(content, _jsonSerializeroptions);
-                    
+                    users = System.Text.Json.JsonSerializer.Deserialize<List<Model.Person>>(content, _jsonSerializeroptions);
+
                 }
                 else
                 {
@@ -238,7 +242,7 @@ namespace FEPolice.DataServices
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
-                    police = JsonSerializer.Deserialize<Model.Policys>(content, _jsonSerializeroptions);
+                    police = System.Text.Json.JsonSerializer.Deserialize<Model.Policys>(content, _jsonSerializeroptions);
                 }
                 else
                 {
@@ -268,7 +272,7 @@ namespace FEPolice.DataServices
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
-                    user = JsonSerializer.Deserialize<Model.Person>(content, _jsonSerializeroptions);
+                    user = System.Text.Json.JsonSerializer.Deserialize<Model.Person>(content, _jsonSerializeroptions);
                 }
                 else
                 {
@@ -293,7 +297,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonPolice = JsonSerializer.Serialize<Model.Policys>(police, _jsonSerializeroptions);
+                string jsonPolice = System.Text.Json.JsonSerializer.Serialize<Model.Policys>(police, _jsonSerializeroptions);
                 StringContent content = new StringContent(jsonPolice, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage responseMessage = await _httpClient.PutAsync($"{_url}/Policys/{police.PolicyNumber}", content);
@@ -324,7 +328,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonUser = JsonSerializer.Serialize<Model.Person>(user, _jsonSerializeroptions);
+                string jsonUser = System.Text.Json.JsonSerializer.Serialize<Model.Person>(user, _jsonSerializeroptions);
                 StringContent content = new StringContent(jsonUser, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage responseMessage = await _httpClient.PutAsync($"{_url}/Person{user.PersonId}", content);
@@ -361,7 +365,7 @@ namespace FEPolice.DataServices
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
-                    productList = JsonSerializer.Deserialize<List<Product>>(content, _jsonSerializeroptions);
+                    productList = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(content, _jsonSerializeroptions);
                 }
                 else
                 {
@@ -391,7 +395,7 @@ namespace FEPolice.DataServices
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string content = await httpResponse.Content.ReadAsStringAsync();
-                    product = JsonSerializer.Deserialize<Product>(content, _jsonSerializeroptions);
+                    product = System.Text.Json.JsonSerializer.Deserialize<Product>(content, _jsonSerializeroptions);
                 }
                 else
                 {
@@ -416,7 +420,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonPolicys = JsonSerializer.Serialize<Product>(product, _jsonSerializeroptions);
+                string jsonPolicys = System.Text.Json.JsonSerializer.Serialize<Product>(product, _jsonSerializeroptions);
                 StringContent content = new StringContent(jsonPolicys, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage responseMessage = await _httpClient.PostAsync($"{_url}/Product", content);
@@ -474,7 +478,7 @@ namespace FEPolice.DataServices
             }
             try
             {
-                string jsonPolice = JsonSerializer.Serialize<Product>(product, _jsonSerializeroptions);
+                string jsonPolice = System.Text.Json.JsonSerializer.Serialize<Product>(product, _jsonSerializeroptions);
                 StringContent content = new StringContent(jsonPolice, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage responseMessage = await _httpClient.PutAsync($"{_url}/Policys/{product.ProductId}", content);
@@ -493,6 +497,46 @@ namespace FEPolice.DataServices
 
                 Debug.WriteLine($"Whoops :{ex.Message}");
             }
+        }
+
+        public async Task<Person> LoginAsync(string kullaniciAdi, string password)
+        {
+            
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+            {
+                Debug.WriteLine("------> No Internet Access");
+                return null;
+            }
+
+            var model = new LoginM { KullaniciAdi = kullaniciAdi, Password = password };
+
+            Person p = new Person();
+            try
+            {
+                HttpResponseMessage message = await _httpClient.PostAsJsonAsync($"{_url}/Person/login", model);
+
+                if (message.IsSuccessStatusCode)
+                {
+                    var responseContent = await message.Content.ReadAsStringAsync();
+                    var responseObject = JObject.Parse(responseContent);
+
+                    JObject userObject = (JObject)responseObject["user"];
+                    user = userObject.ToObject<Person>();
+                    Debug.WriteLine("Succesfully created User");
+                }
+                else
+                {
+                    Debug.WriteLine("-----> Non Http 2xx response");
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine($"Whoops :{ex.Message}");
+            }
+
+            return user;
         }
     }
 }

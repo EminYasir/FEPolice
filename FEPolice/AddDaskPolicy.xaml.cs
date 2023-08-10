@@ -39,9 +39,7 @@ public partial class AddDaskPolicy : ContentPage
 
         Policys newPolicy = new Policys();
 
-        newPolicy.PolicyNumber = policyList[policyList.Count() - 1].PolicyNumber + 1;
-        newPolicy.Person = _person;
-        newPolicy.Product = _product;
+        
         newPolicy.ProductId = _id;
         newPolicy.PersonId = _person.PersonId;
         newPolicy.Adress = Adress.Text;
@@ -55,7 +53,7 @@ public partial class AddDaskPolicy : ContentPage
 
 
         await _dataService.AddPolicysAsync(newPolicy);
-        await Navigation.PopModalAsync();
+        //await Navigation.PopModalAsync();
 
 
     }

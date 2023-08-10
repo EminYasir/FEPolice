@@ -14,6 +14,7 @@ namespace FEPolice.DataServices
         Task AddPersonAsync(Person user);
         Task DeletePersonAsync(int id);
         Task UpdatePersonAsync(Person user);
+        Task<Person> LoginAsync(string kullaniciAdi, string password);
 
         Task<List<Policys>> GetAllPolicysAsync();
         Task<Policys> GetPolicysByNumberAsync(int policyNumber);

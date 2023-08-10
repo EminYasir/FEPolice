@@ -54,6 +54,6 @@ public partial class AddTrafikPolicy : ContentPage
 
 
         await _dataService.AddPolicysAsync(newPolicy);
-        await Navigation.PopModalAsync();
+        //await Navigation.PopModalAsync();
     }
 }

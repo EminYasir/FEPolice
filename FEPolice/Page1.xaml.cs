@@ -22,15 +22,15 @@ public partial class Page1 : ContentPage
 
     private async void Button_Clicked_1(object sender, EventArgs e)
     {
-        
-        await Navigation.PushAsync(new AllPolicyies(_dataService,person));
+
+        await Navigation.PushAsync(new AllPolicyies(_dataService, person));
 
     }
 
     private async void Buton_Trafik(object sender, EventArgs e)
     {
         productid = 2;
-        await Navigation.PushAsync(new TrafikPage(_dataService, person ,productid));
+        await Navigation.PushAsync(new TrafikPage(_dataService, person, productid));
 
     }
 

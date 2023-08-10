@@ -40,9 +40,7 @@ public partial class AddHealthPolicy : ContentPage
 
         Policys newPolicy = new Policys();
 
-        newPolicy.PolicyNumber = policyList[policyList.Count() - 1].PolicyNumber + 1;
-        newPolicy.Person = _person;
-        newPolicy.Product = _product;
+       
         newPolicy.ProductId = _id;
         newPolicy.PersonId = _person.PersonId;
         newPolicy.SigortaNumarasi = SigortaNumber.Text;

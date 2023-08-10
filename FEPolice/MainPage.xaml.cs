@@ -31,32 +31,23 @@ public partial class MainPage : ContentPage
 
     private async void OnCounterClicked(object sender, EventArgs e)
     {
-        Person p=new Person();
-        bool control = false;
-        foreach (Person person in personList)
+        string kullaniciAdi = Kullaniciadi.Text;
+        string sifre = Kullanicisifre.Text;
+
+        Person result = await _dataService.LoginAsync(kullaniciAdi, sifre);
+        //var loggedInPerson = await _dataService.Person.FirstOrDefaultAsync(u => u.Adi + " " + u.Soyadi == kullaniciAdi && u.Password == sifre);
+        if (result != null)
         {
-            if (Kullaniciadi.Text == person.Adi+""+person.Soyadi && Kullanicisifre.Text == person.Password)
-            {
-                p=person;
-                control = true;
-                break;
-            }
-            
-        }
-        if ( control)
-        {
-            await Navigation.PushAsync(new Page1(_dataService, p ));
-            ErrorMessage.Text = "Bağlantı başarılı";
-            
+            // API'den giriş başarılı yanıt aldıysak
+            await Navigation.PushAsync(new Page1(_dataService,result));
+            ErrorMessage.Text = "Giriş başarılı";
         }
         else
         {
-            ErrorMessage.Text = "Bağlantı başarılı değil";
-
+            ErrorMessage.Text = "Geçersiz kullanıcı adı veya şifre.";
         }
 
         ErrorMessage.IsVisible = true;
-
     }
 
 
