@@ -51,7 +51,7 @@
                             <Label Grid.Column="4"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Adress}" />
                             <Label Grid.Column="5"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Ilce}" />
                             <Label Grid.Column="6"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Il}" />
-                            <Button Grid.Column="7" BorderWidth="5" BackgroundColor="AliceBlue" FontSize="8" TextColor="Red" BorderColor="Black" Text="Sil" Clicked="Sil_Clicked" CommandParameter="{Binding PolicyNumber}"/>
+                            <Button Grid.Column="7" BorderWidth="5" BackgroundColor="Red" FontSize="10" TextColor="White" BorderColor="Black" Text="Sil" Clicked="Sil_Clicked" CommandParameter="{Binding PolicyNumber}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
