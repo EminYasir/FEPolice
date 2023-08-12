@@ -1,0 +1,184 @@
+[
+  {
+    "make": "Toyota",
+    "models": [
+      "Camry",
+      "Corolla",
+      "RAV4",
+      "Prius",
+      "Avalon",
+      "Highlander"
+    ]
+  },
+  {
+    "make": "Honda",
+    "models": [
+      "Civic",
+      "Accord",
+      "CR-V",
+      "HRV",
+      "Pilot",
+      "Odyssey"
+    ]
+  },
+  {
+    "make": "Ford",
+    "models": [
+      "F-150",
+      "Mustang",
+      "Explorer",
+      "Escape",
+      "Edge",
+      "Flex"
+    ]
+  },
+  {
+    "make": "Chevy",
+    "models": [
+      "Silverado",
+      "Camaro",
+      "Equinox",
+      "Trax",
+      "Malibu",
+      "Impala"
+    ]
+  },
+  {
+    "make": "Tesla",
+    "models": [
+      "Model 3",
+      "Model Y",
+      "Model S",
+      "Model X"
+    ]
+  },
+  {
+    "make": "Hyundai",
+    "models": [
+      "Elantra",
+      "Sonata",
+      "Tucson",
+      "Kona",
+      "Santa Fe",
+      "Palisade"
+    ]
+  },
+  {
+    "make": "Kia",
+    "models": [
+      "Rio",
+      "Forte",
+      "Soul",
+      "Sportage",
+      "Sorento",
+      "Telluride"
+    ]
+  },
+  {
+    "make": "Mazda",
+    "models": [
+      "3",
+      "6",
+      "CX-5",
+      "CX-30",
+      "CX-9",
+      "MX-5 Miata"
+    ]
+  },
+  {
+    "make": "Nissan",
+    "models": [
+      "Altima",
+      "Sentra",
+      "Rogue",
+      "Versa",
+      "Murano",
+      "Pathfinder"
+    ]
+  },
+  {
+    "make": "Subaru",
+    "models": [
+      "Impreza",
+      "Legacy",
+      "Outback",
+      "Crosstrek",
+      "Forester",
+      "BRZ"
+    ]
+  },
+  {
+    "make": "Volkswagen",
+    "models": [
+      "Jetta",
+      "Golf",
+      "Tiguan",
+      "Atlas",
+      "Passat",
+      "Arteon"
+    ]
+  },
+  {
+    "make": "Mercedes-Benz",
+    "models": [
+      "C-Class",
+      "E-Class",
+      "S-Class",
+      "GLC",
+      "GLE",
+      "GLS",
+      "A-Class",
+      "CLA",
+      "GLA"
+    ]
+  },
+  {
+    "make": "BMW",
+    "models": [
+      "3 Series",
+      "5 Series",
+      "7 Series",
+      "X1",
+      "X3",
+      "X4",
+      "X5",
+      "X6",
+      "X7",
+      "i4",
+      "iX"
+    ]
+  },
+  {
+    "make": "Audi",
+    "models": [
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "A7",
+      "A8",
+      "Q2",
+      "Q3",
+      "Q5",
+      "Q7",
+      "Q8",
+      "E-Tron",
+      "E-Tron Sportback",
+      "RS 3",
+      "RS 4",
+      "RS 5"
+    ]
+  },
+  {
+    "make": "Lexus",
+    "models": [
+      "ES",
+      "IS",
+      "UX",
+      "NX",
+      "RX",
+      "LX",
+      "LS"
+    ]
+  }
+]

@@ -17,10 +17,10 @@
         <Entry x:Name="CarPlaka" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
 
         <Label Text="Araba Markası" Margin="10,5,10,0"></Label>
-        <Entry x:Name="CarBrand" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Picker x:Name="MarkaPicker" SelectedIndexChanged="MarkaPicker_SelectedIndexChanged"  WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
 
         <Label Text="Araba Modeli" Margin="10,5,10,0"></Label>
-        <Entry x:Name="CarModel" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Picker x:Name="ModelPicker"  WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
 
         <Label Text="TanzimTarihi" Margin="10,5,10,0"></Label>
         <Entry x:Name="TanzimTarihi" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
