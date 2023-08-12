@@ -16,11 +16,11 @@
         <Label Text="Açık Adres" Margin="10,5,10,0"></Label>
         <Entry x:Name="Adress" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
 
-        <Label Text="İlçe" Margin="10,5,10,0"></Label>
-        <Entry x:Name="Ilce" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
-
         <Label Text="İl" Margin="10,5,10,0"></Label>
-        <Entry x:Name="Il" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Picker x:Name="IlPicker" SelectedIndexChanged="IlPicker_SelectedIndexChanged"  WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
+        
+        <Label Text="İlçe" Margin="10,5,10,0"></Label>
+        <Picker x:Name="IlcePicker" WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
 
         <Label Text="TanzimTarihi" Margin="10,5,10,0"></Label>
         <Entry x:Name="TanzimTarihi" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>

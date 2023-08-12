@@ -11,7 +11,7 @@ public partial class AddTrafikPolicy : ContentPage
     private IRestDataService _dataService;
     int _id;
     DateTime now = DateTime.Now;
-    Random many = new Random(10000);
+    Random many = new Random();
     public AddTrafikPolicy(IRestDataService dataService, Person p, int productid)
 	{
 		InitializeComponent();
@@ -20,6 +20,13 @@ public partial class AddTrafikPolicy : ContentPage
         _id = productid;
         KullaniciAdi.Text = _person.Adi;
         KullaniciSoyAdi.Text = _person.Soyadi;
+        List<int> plakaIlKoduList = new List<int>();
+        for (int i = 1; i <= 83; i++)
+        {
+            plakaIlKoduList.Add(i);
+        }
+
+        PlakaIlKoduPicker.ItemsSource = plakaIlKoduList;
     }
 
 
@@ -27,7 +34,7 @@ public partial class AddTrafikPolicy : ContentPage
     {
 
         if (string.IsNullOrEmpty(KullaniciAdi.Text) || string.IsNullOrEmpty(KullaniciSoyAdi.Text) ||
-            string.IsNullOrEmpty(PlakaIlKodu.Text) || string.IsNullOrEmpty(PlakaKodu.Text)  ||
+             string.IsNullOrEmpty(PlakaKodu.Text)  ||
             string.IsNullOrEmpty(TanzimTarihi.Text) || string.IsNullOrEmpty(VadeBaslangic.Text) ||
             string.IsNullOrEmpty(VadeBitis.Text) || string.IsNullOrEmpty(Prim.Text))
         {
@@ -45,11 +52,11 @@ public partial class AddTrafikPolicy : ContentPage
         newPolicy.ProductId = _id;
         newPolicy.PersonId = _person.PersonId;
         newPolicy.PlakaKodu = PlakaKodu.Text;
-        newPolicy.PlakaIlKodu = PlakaIlKodu.Text;
+        newPolicy.PlakaIlKodu = PlakaIlKoduPicker.SelectedItem.ToString();
         newPolicy.TanzimTarihi = now;
         newPolicy.VadeBaslangic = now;
         newPolicy.VadeBitis = now.AddYears(1);
-        newPolicy.Prim = many.NextDouble();
+        newPolicy.Prim = Math.Round(many.NextDouble() * (1000.0 - 10.0) + 10.0, 2);
         newPolicy.Discriminator = "Traffic";
 
 

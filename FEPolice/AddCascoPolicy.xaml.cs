@@ -11,7 +11,7 @@ public partial class AddCascoPolicy : ContentPage
     private IRestDataService _dataService;
     int _id;
 	DateTime now= DateTime.Now;
-	Random many=new Random(10000);
+	Random many=new Random();
 
     public AddCascoPolicy(IRestDataService dataService, Person p, int productid)
 	{
@@ -52,7 +52,7 @@ public partial class AddCascoPolicy : ContentPage
         newPolicy.TanzimTarihi = now;
         newPolicy.VadeBaslangic = now;
         newPolicy.VadeBitis = now.AddYears(1);
-        newPolicy.Prim = many.NextDouble();
+        newPolicy.Prim = Math.Round(many.NextDouble() * (1000.0 - 10.0) + 10.0, 2);
         newPolicy.Discriminator = "Casco";
 
         

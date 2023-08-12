@@ -12,7 +12,7 @@
         <Entry x:Name="KullaniciSoyAdi" WidthRequest="150" Margin="10,0" HorizontalOptions="Start" IsEnabled="False"></Entry>
 
         <Label Text="Plaka İl Kodu" Margin="10,5,10,0"></Label>
-        <Entry x:Name="PlakaIlKodu" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Picker x:Name="PlakaIlKoduPicker" WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
 
         <Label Text="Plaka Kodu" Margin="10,5,10,0"></Label>
         <Entry x:Name="PlakaKodu" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
