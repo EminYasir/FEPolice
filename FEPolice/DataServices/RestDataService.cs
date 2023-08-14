@@ -509,8 +509,6 @@ namespace FEPolice.DataServices
             }
 
             var model = new LoginM { KullaniciAdi = kullaniciAdi, Password = password };
-
-            Person p = new Person();
             try
             {
                 HttpResponseMessage message = await _httpClient.PostAsJsonAsync($"{_url}/Person/login", model);

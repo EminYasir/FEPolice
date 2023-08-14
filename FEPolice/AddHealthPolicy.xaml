@@ -20,19 +20,24 @@
         <Entry x:Name="HastaneAdi" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
 
         <Label Text="TanzimTarihi" Margin="10,5,10,0"></Label>
-        <Entry x:Name="TanzimTarihi" WidthRequest="150"  Margin="10,0" HorizontalOptions="Start"></Entry>
+        <DatePicker x:Name="DatePicker" 
+                Format="dd/MM/yyyy"  WidthRequest="150" Margin="10,0" HorizontalOptions="Start" />
 
-        <Label Text="VadeBaslangic" Margin="10,5,10,0"></Label>
-        <Entry x:Name="VadeBaslangic" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Label Text="Vade Başlangıç" Margin="10,5,10,0"></Label>
+        <DatePicker x:Name="DatePickerBaslangic" 
+                Format="dd/MM/yyyy"  WidthRequest="150" Margin="10,0" HorizontalOptions="Start" DateSelected="DatePicker_DateSelected" />
 
-        <Label Text="VadeBitis" Margin="10,5,10,0"></Label>
-        <Entry x:Name="VadeBitis" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
+        <Label Text="Vade Bitiş" Margin="10,5,10,0"></Label>
+        <DatePicker x:Name="DatePickerBitis" WidthRequest="150" Margin="10,0" HorizontalOptions="Start" 
+                Date="{Binding ModifiedDate}" 
+                Format="dd/MM/yyyy" 
+                 />
 
         <Label Text="Prim" Margin="10,5,10,0"></Label>
         <Entry x:Name="Prim" WidthRequest="150" Margin="10,0" HorizontalOptions="Start"></Entry>
 
 
 
-        <Button  BorderWidth="3" Margin="3" WidthRequest="160"  BackgroundColor="Green" FontSize="10" TextColor="White" BorderColor="Black" Clicked="Add_Health_Policy" Text="Sağlık Poliçesi Ekle" />
+        <Button  BorderWidth="3" Margin="6" WidthRequest="160"  BackgroundColor="Green" FontSize="10" TextColor="White" BorderColor="Black" Clicked="Add_Health_Policy" Text="Sağlık Poliçesi Ekle" />
     </StackLayout>
 </ContentPage>

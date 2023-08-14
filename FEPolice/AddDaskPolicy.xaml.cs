@@ -13,7 +13,6 @@ public partial class AddDaskPolicy : ContentPage
     private Product _product;
     private IRestDataService _dataService;
     int _id;
-    DateTime now = DateTime.Now;
     Random many = new Random();
     private List<City> cities;
     public AddDaskPolicy(IRestDataService dataService, Person p, int productid)
@@ -67,17 +66,26 @@ public partial class AddDaskPolicy : ContentPage
             IlcePicker.IsEnabled = true;
         }
     }
+    private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        DatePickerBitis.Date = DatePickerBaslangic.Date.AddYears(1);
+    }
+
 
     public async void Add_Dask_Policy(object sender, EventArgs e)
     {
 
-        if (string.IsNullOrEmpty(KullaniciAdi.Text) || string.IsNullOrEmpty(KullaniciSoyAdi.Text) ||
-            string.IsNullOrEmpty(Adress.Text) || 
-            string.IsNullOrEmpty(TanzimTarihi.Text) || string.IsNullOrEmpty(VadeBaslangic.Text) ||
-            string.IsNullOrEmpty(VadeBitis.Text) || string.IsNullOrEmpty(Prim.Text))
+        if (string.IsNullOrEmpty(KullaniciAdi.Text) || string.IsNullOrEmpty(KullaniciSoyAdi.Text) || DatePicker.Date.Equals(null)||
+            DatePickerBaslangic.Equals(null)||DatePickerBitis.Date.Equals(null)|| IlcePicker.SelectedItem==null|| IlPicker.SelectedItem == null ||
+            string.IsNullOrEmpty(Adress.Text) ||string.IsNullOrEmpty(Prim.Text))
         {
             await DisplayAlert("Uyarý", "Lütfen tüm alanlarý doldurunuz.", "Tamam");
             return;
+        }
+
+        if (true)
+        {
+
         }
         policyList = await _dataService.GetAllPolicysAsync();
         _product = await _dataService.GetProductByNumberAsync(_id);
@@ -91,9 +99,9 @@ public partial class AddDaskPolicy : ContentPage
         newPolicy.Adress = Adress.Text;
         newPolicy.Ilce = IlcePicker.SelectedItem.ToString();
         newPolicy.Il = IlPicker.SelectedItem.ToString();
-        newPolicy.TanzimTarihi = now;
-        newPolicy.VadeBaslangic = now;
-        newPolicy.VadeBitis = now.AddYears(1);
+        newPolicy.TanzimTarihi = DatePicker.Date;
+        newPolicy.VadeBaslangic = DatePickerBaslangic.Date;
+        newPolicy.VadeBitis = DatePickerBitis.Date;
         newPolicy.Prim = Math.Round(many.NextDouble() * (1000.0 - 10.0) + 10.0, 2);
         newPolicy.Discriminator = "Dask";
 

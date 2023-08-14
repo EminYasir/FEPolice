@@ -10,7 +10,6 @@ public partial class AddTrafikPolicy : ContentPage
     private Product _product;
     private IRestDataService _dataService;
     int _id;
-    DateTime now = DateTime.Now;
     Random many = new Random();
     public AddTrafikPolicy(IRestDataService dataService, Person p, int productid)
 	{
@@ -21,6 +20,7 @@ public partial class AddTrafikPolicy : ContentPage
         KullaniciAdi.Text = _person.Adi;
         KullaniciSoyAdi.Text = _person.Soyadi;
         List<int> plakaIlKoduList = new List<int>();
+        DatePickerBitis.Date = DatePickerBaslangic.Date.AddYears(1);
         for (int i = 1; i <= 83; i++)
         {
             plakaIlKoduList.Add(i);
@@ -29,14 +29,18 @@ public partial class AddTrafikPolicy : ContentPage
         PlakaIlKoduPicker.ItemsSource = plakaIlKoduList;
     }
 
+    private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        DatePickerBitis.Date = DatePickerBaslangic.Date.AddYears(1);
+    }
 
     public async void Add_Trafik_Policy(object sender, EventArgs e)
     {
 
         if (string.IsNullOrEmpty(KullaniciAdi.Text) || string.IsNullOrEmpty(KullaniciSoyAdi.Text) ||
              string.IsNullOrEmpty(PlakaKodu.Text)  ||
-            string.IsNullOrEmpty(TanzimTarihi.Text) || string.IsNullOrEmpty(VadeBaslangic.Text) ||
-            string.IsNullOrEmpty(VadeBitis.Text) || string.IsNullOrEmpty(Prim.Text))
+            DatePicker.Date.Equals(null) || PlakaIlKoduPicker.SelectedItem==null||
+            DatePickerBaslangic.Equals(null) || DatePickerBitis.Date.Equals(null) || string.IsNullOrEmpty(Prim.Text))
         {
             await DisplayAlert("Uyarý", "Lütfen tüm alanlarý doldurunuz.", "Tamam");
             return;
@@ -53,9 +57,9 @@ public partial class AddTrafikPolicy : ContentPage
         newPolicy.PersonId = _person.PersonId;
         newPolicy.PlakaKodu = PlakaKodu.Text;
         newPolicy.PlakaIlKodu = PlakaIlKoduPicker.SelectedItem.ToString();
-        newPolicy.TanzimTarihi = now;
-        newPolicy.VadeBaslangic = now;
-        newPolicy.VadeBitis = now.AddYears(1);
+        newPolicy.TanzimTarihi = DatePicker.Date;
+        newPolicy.VadeBaslangic = DatePickerBaslangic.Date;
+        newPolicy.VadeBitis = DatePickerBitis.Date;
         newPolicy.Prim = Math.Round(many.NextDouble() * (1000.0 - 10.0) + 10.0, 2);
         newPolicy.Discriminator = "Traffic";
 

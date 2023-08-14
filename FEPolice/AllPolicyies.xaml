@@ -19,9 +19,9 @@
 
             <Label Grid.Column="0"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Ürün Kodu" />
             <Label Grid.Column="1"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Ürün Adı" />
-            <Label Grid.Column="2"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Poliçe Numarası" />
-            <Label Grid.Column="3"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Kullanıcı İd" />
-            <Label Grid.Column="4"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Product Id" />
+            <Label Grid.Column="2"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Kullanıcı İd" />
+            <Label Grid.Column="3"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Product Id" />
+            <Label Grid.Column="4"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Tanzim Tarihi" />
             <Label Grid.Column="5"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Vade Baslangic Tarihi" />
             <Label Grid.Column="6"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Vade Bitiş Tarihi" />
             <Label Grid.Column="7"  Margin="0,2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Azure" FontSize="10"  Text="Prim" />
@@ -46,9 +46,9 @@
 
                             <Label Grid.Column="0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#DCEFFF" FontSize="8" Text="{Binding Product.Code}"/>
                             <Label Grid.Column="1"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Product.Name}" />
-                            <Label Grid.Column="2"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#DCEFFF" FontSize="8" Text="{Binding PolicyNumber}"/>
-                            <Label Grid.Column="3"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding PersonId}" />
-                            <Label Grid.Column="4"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding ProductId}" />
+                            <Label Grid.Column="2"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding PersonId}" />
+                            <Label Grid.Column="3"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding ProductId}" />
+                            <Label Grid.Column="4"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#DCEFFF" FontSize="8" Text="{Binding TanzimTarihi}"/>
                             <Label Grid.Column="5"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding VadeBaslangic}" />
                             <Label Grid.Column="6"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding VadeBitis}" />
                             <Label Grid.Column="7"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" FontSize="8" Text="{Binding Prim}" />
